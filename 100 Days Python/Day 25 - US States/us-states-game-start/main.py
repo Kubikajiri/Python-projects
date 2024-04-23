@@ -35,18 +35,11 @@ while len(correct_guesses) < 50:
 		turtle_answer.goto(int(answer_x), int(answer_y))
 		turtle_answer.write(state_answer, align="Center")
 	elif state_answer == 'exit':
-		missing_states = []
-		for s in states:
-			if s not in correct_guesses:
-				missing_states.append(s)
+		missing_states = [s for s in states if s not in correct_guesses]
 		print(missing_states)
 		df = pandas.DataFrame(missing_states, columns=None)
-		df.to_csv('list.csv',)
+		df.to_csv('list.csv')
 		break
 
 screen.exitonclick()
 
-# states to csv:
-# for s in data.states:
-# 	if s not in correct_guesses:
-# 		data.s.to_csv()
