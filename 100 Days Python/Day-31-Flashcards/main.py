@@ -11,6 +11,8 @@ try:
 	data = pd.read_csv("data\\words_to_learn.csv")
 except FileNotFoundError:
 	original_data = pd.read_csv("data\\french_words.csv")
+
+
 def generate_random_french():
 	global random_word, flip_timer
 	window.after_cancel(flip_timer)
